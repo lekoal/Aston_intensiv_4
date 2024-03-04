@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             if (supportFragmentManager.findFragmentByTag(AFragment.TAG) == null) {
                 val aFragment = AFragment.newInstance()
                 supportFragmentManager.beginTransaction()
-                    .replace(binding.fragmentContainer.id, aFragment, AFragment.TAG)
+                    .add(binding.fragmentContainer.id, aFragment, AFragment.TAG)
                     .addToBackStack(AFragment.TAG)
                     .commit()
             }

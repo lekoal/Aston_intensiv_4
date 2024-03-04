@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:clickable="true"
-    android:elevation="10dp"
+    android:elevation="5dp"
     android:focusable="true"
     tools:context=".part_1.ui.BFragment">
 
@@ -26,16 +26,16 @@
         android:layout_height="wrap_content"
         android:text="@string/button_go_to_c_title"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@id/go_back_to_a_button"
+        app:layout_constraintBottom_toTopOf="@id/go_back_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/go_back_to_a_button"
+        android:id="@+id/go_back_button"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
-        android:text="@string/button_go_back_to_a"
+        android:text="@string/button_go_back"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

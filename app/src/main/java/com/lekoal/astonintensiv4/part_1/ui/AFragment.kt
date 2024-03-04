@@ -9,7 +9,7 @@ class AFragment : ViewBindingBaseFragment<FragmentABinding>(FragmentABinding::in
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setButtonsListener()
+        setButtonsListeners()
     }
     companion object {
         const val TAG = "A_FRAGMENT_TAG"
@@ -17,7 +17,7 @@ class AFragment : ViewBindingBaseFragment<FragmentABinding>(FragmentABinding::in
         fun newInstance() = AFragment()
     }
 
-    private fun setButtonsListener() {
+    private fun setButtonsListeners() {
         binding.goToBButton.setOnClickListener {
             if (childFragmentManager.findFragmentByTag(BFragment.TAG) == null) {
                 val bFragment = BFragment.newInstance()

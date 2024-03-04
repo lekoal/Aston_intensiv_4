@@ -12,4 +12,6 @@
     <string name="button_go_to_d_title">Перейти на D</string>
     <string name="d_fragment_title">Фрагмент D</string>
     <string name="button_go_back_to_b_title">Вернуться на B</string>
+    <string name="translatex_text_from_b_to_c">Hello Fragment C</string>
+    <string name="button_go_back">Назад</string>
 </resources>
