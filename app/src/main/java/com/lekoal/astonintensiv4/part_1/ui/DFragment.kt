@@ -20,6 +20,6 @@ class DFragment : ViewBindingBaseFragment<FragmentDBinding>(FragmentDBinding::in
     }
 
     private fun setButtonsListener() {
-        childFragmentManager.popBackStack(BFragment.TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        parentFragmentManager.popBackStack(BFragment.TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE)
     }
 }

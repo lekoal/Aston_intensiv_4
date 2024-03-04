@@ -21,10 +21,10 @@ class BFragment : ViewBindingBaseFragment<FragmentBBinding>(FragmentBBinding::in
 
     private fun setButtonsListener() {
         binding.goToCButton.setOnClickListener {
-            if (childFragmentManager.findFragmentByTag(CFragment.TAG) == null) {
+            if (parentFragmentManager.findFragmentByTag(CFragment.TAG) == null) {
                 val translatedText = getString(R.string.translatex_text_from_b_to_c)
                 val cFragment = CFragment.newInstance(translatedText)
-                childFragmentManager.beginTransaction()
+                parentFragmentManager.beginTransaction()
                     .add(binding.bFragmentContainer.id, cFragment, CFragment.TAG)
                     .addToBackStack(CFragment.TAG)
                     .commit()

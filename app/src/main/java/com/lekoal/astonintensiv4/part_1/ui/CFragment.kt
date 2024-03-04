@@ -2,7 +2,6 @@ package com.lekoal.astonintensiv4.part_1.ui
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.FragmentManager
 import com.lekoal.astonintensiv4.databinding.FragmentCBinding
 import com.lekoal.astonintensiv4.utils.ViewBindingBaseFragment
 
@@ -35,9 +34,9 @@ class CFragment : ViewBindingBaseFragment<FragmentCBinding>(FragmentCBinding::in
 
     private fun setButtonsListeners() {
         binding.goToDButton.setOnClickListener {
-            if (childFragmentManager.findFragmentByTag(DFragment.TAG) == null) {
+            if (parentFragmentManager.findFragmentByTag(DFragment.TAG) == null) {
                 val dFragment = DFragment.newInstance()
-                childFragmentManager.beginTransaction()
+                parentFragmentManager.beginTransaction()
                     .add(binding.cFragmentContainer.id, dFragment, DFragment.TAG)
                     .addToBackStack(DFragment.TAG)
                     .commit()
@@ -46,7 +45,7 @@ class CFragment : ViewBindingBaseFragment<FragmentCBinding>(FragmentCBinding::in
         binding.goBackToAButton.setOnClickListener {
             parentFragmentManager.popBackStack(
                 AFragment.TAG,
-                FragmentManager.POP_BACK_STACK_INCLUSIVE
+                0
             )
         }
     }

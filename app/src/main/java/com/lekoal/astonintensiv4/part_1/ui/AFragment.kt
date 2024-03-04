@@ -19,11 +19,11 @@ class AFragment : ViewBindingBaseFragment<FragmentABinding>(FragmentABinding::in
 
     private fun setButtonsListeners() {
         binding.goToBButton.setOnClickListener {
-            if (childFragmentManager.findFragmentByTag(BFragment.TAG) == null) {
+            if (parentFragmentManager.findFragmentByTag(BFragment.TAG) == null) {
                 val bFragment = BFragment.newInstance()
-                childFragmentManager.beginTransaction()
-                    .add(binding.aFragmentContainer.id, bFragment, BFragment.TAG)
+                parentFragmentManager.beginTransaction()
                     .addToBackStack(BFragment.TAG)
+                    .add(binding.aFragmentContainer.id, bFragment, BFragment.TAG)
                     .commit()
             }
         }
