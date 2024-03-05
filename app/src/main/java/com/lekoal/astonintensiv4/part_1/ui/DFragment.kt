@@ -2,7 +2,6 @@ package com.lekoal.astonintensiv4.part_1.ui
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.FragmentManager
 import com.lekoal.astonintensiv4.databinding.FragmentDBinding
 import com.lekoal.astonintensiv4.utils.ViewBindingBaseFragment
 
@@ -20,6 +19,8 @@ class DFragment : ViewBindingBaseFragment<FragmentDBinding>(FragmentDBinding::in
     }
 
     private fun setButtonsListener() {
-        parentFragmentManager.popBackStack(BFragment.TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        binding.goToBButton.setOnClickListener {
+            parentFragmentManager.popBackStack(BFragment.TAG, 0)
+        }
     }
 }
