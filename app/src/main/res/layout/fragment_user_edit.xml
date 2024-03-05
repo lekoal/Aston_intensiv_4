@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:elevation="5dp"
+    android:focusable="true"
+    tools:context=".part_2.ui.UserEditFragment">
+
+    <TextView
+        android:id="@+id/user_edit_fragment_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/user_edit_fragment_title"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/user_edit_image_view"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/image_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_edit_fragment_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/edit_image_key_enter_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/user_edit_change_image_title"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/user_edit_image_view"
+        app:layout_constraintTop_toTopOf="@id/user_edit_image_view" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_image_key_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:inputType="text"
+        app:layout_constraintEnd_toStartOf="@id/edit_image_button_ok"
+        app:layout_constraintStart_toEndOf="@id/user_edit_image_view"
+        app:layout_constraintTop_toBottomOf="@id/edit_image_key_enter_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/edit_image_button_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_image_button_ok_title"
+        app:layout_constraintBottom_toBottomOf="@id/edit_image_key_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/edit_image_key_edit_text"
+        app:layout_constraintTop_toTopOf="@id/edit_image_key_edit_text" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/edit_name_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/user_edit_name_title"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/user_edit_image_view"
+        app:layout_constraintTop_toBottomOf="@id/edit_image_key_edit_text" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_name_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/user_edit_image_view"
+        app:layout_constraintTop_toBottomOf="@id/edit_name_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/edit_surname_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/user_edit_surname_title"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/user_edit_image_view"
+        app:layout_constraintTop_toBottomOf="@id/edit_name_edit_text" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_surname_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/user_edit_image_view"
+        app:layout_constraintTop_toBottomOf="@id/edit_surname_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/edit_phone_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/user_edit_phone_title"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_edit_image_view" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_phone_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_phone_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/edit_button_cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/user_edit_cancel_button_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/edit_button_confirm"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/edit_button_confirm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/user_edit_confirm_button_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/edit_button_cancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
