@@ -79,11 +79,15 @@ class UserListFragment :
 
     private fun setUserItemListener(userBinding: UserListItemBinding, userInfo: UserInfo) {
         userBinding.userListItem.setOnClickListener {
-            val userEditFragment = UserEditFragment.newInstance(userInfo)
             if (parentFragmentManager.findFragmentByTag(UserEditFragment.TAG) == null) {
+                val userEditFragment = UserEditFragment.newInstance(userInfo)
                 parentFragmentManager.beginTransaction()
                     .addToBackStack(UserEditFragment.TAG)
-                    .add(binding.userListLayout.id, userEditFragment, UserEditFragment.TAG)
+                    .replace(
+                        binding.userListFragmentContainer.id,
+                        userEditFragment,
+                        UserEditFragment.TAG
+                    )
                     .commit()
             }
         }

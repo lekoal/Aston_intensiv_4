@@ -11,8 +11,10 @@ class AFragment : ViewBindingBaseFragment<FragmentABinding>(FragmentABinding::in
 
         setButtonsListeners()
     }
+
     companion object {
         const val TAG = "A_FRAGMENT_TAG"
+
         @JvmStatic
         fun newInstance() = AFragment()
     }
