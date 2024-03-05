@@ -20,7 +20,9 @@ class DFragment : ViewBindingBaseFragment<FragmentDBinding>(FragmentDBinding::in
 
     private fun setButtonsListener() {
         binding.goToBButton.setOnClickListener {
-            parentFragmentManager.popBackStack(BFragment.TAG, 0)
+            if (parentFragmentManager.findFragmentByTag(BFragment.TAG) != null) {
+                parentFragmentManager.popBackStack(BFragment.TAG, 0)
+            }
         }
     }
 }

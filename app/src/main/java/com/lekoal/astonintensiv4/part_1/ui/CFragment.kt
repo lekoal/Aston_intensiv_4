@@ -43,10 +43,12 @@ class CFragment : ViewBindingBaseFragment<FragmentCBinding>(FragmentCBinding::in
             }
         }
         binding.goBackToAButton.setOnClickListener {
-            parentFragmentManager.popBackStack(
-                AFragment.TAG,
-                0
-            )
+            if (parentFragmentManager.findFragmentByTag(AFragment.TAG) != null) {
+                parentFragmentManager.popBackStack(
+                    AFragment.TAG,
+                    0
+                )
+            }
         }
     }
 }
