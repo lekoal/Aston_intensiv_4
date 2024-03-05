@@ -15,7 +15,7 @@ abstract class ViewBindingBaseFragment<T : ViewBinding>(
     ) -> T
 ) : Fragment() {
     private var _binding: T? = null
-    val binding get() = _binding!!
+    val binding get() = requireNotNull(_binding)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -25,8 +25,8 @@ abstract class ViewBindingBaseFragment<T : ViewBinding>(
         return binding.root
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 }
