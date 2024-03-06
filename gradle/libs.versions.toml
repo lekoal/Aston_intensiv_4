@@ -11,6 +11,7 @@ activity = "1.8.0"
 coil = "2.5.0"
 fragmentKtx = "1.6.2"
 constraintlayout = "2.1.4"
+serialization = "1.9.22"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -27,4 +28,3 @@ androidx-fragment-fragment-ktx = { group = "androidx.fragment", name = "fragment
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-

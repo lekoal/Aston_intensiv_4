@@ -1,5 +1,7 @@
 package com.lekoal.astonintensiv4.part_2.ui
 
+import android.os.Build.VERSION
+import android.os.Build.VERSION_CODES
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.setFragmentResult
@@ -22,11 +24,17 @@ class UserEditFragment :
 
         val editArguments = requireArguments()
         if (!editArguments.isEmpty) {
-            userId = editArguments.getInt(USER_ID, 0)
-            name = editArguments.getString(USER_NAME, "")
-            surname = editArguments.getString(USER_SURNAME, "")
-            phone = editArguments.getString(USER_PHONE, "")
-            imageLink = editArguments.getString(USER_IMAGE, "")
+            val userInfoData = if (VERSION.SDK_INT >= VERSION_CODES.TIRAMISU) {
+                editArguments.getSerializable(USER_INFO_DATA, UserInfo::class.java) as UserInfo
+            } else {
+                editArguments.getSerializable(USER_INFO_DATA) as UserInfo
+            }
+
+            userId = userInfoData.id
+            name = userInfoData.name
+            surname = userInfoData.surname
+            phone = userInfoData.phone
+            imageLink = userInfoData.imageLink
         }
         if (savedInstanceState != null) {
             imageLink = savedInstanceState.getString(EDITED_IMAGE_LINK, "")
@@ -38,21 +46,13 @@ class UserEditFragment :
     companion object {
         private const val EDITED_IMAGE_LINK = "EDITED_IMAGE_LINK"
         const val TAG = "USER_EDIT_FRAGMENT_TAG"
-        const val USER_ID = "USER_ID"
-        const val USER_NAME = "USER_NAME"
-        const val USER_SURNAME = "USER_SURNAME"
-        const val USER_PHONE = "USER_PHONE"
-        const val USER_IMAGE = "USER_IMAGE"
+        const val USER_INFO_DATA = "USER_INFO_DATA"
 
         @JvmStatic
         fun newInstance(userInfo: UserInfo) =
             UserEditFragment().apply {
                 arguments = Bundle().apply {
-                    putInt(USER_ID, userInfo.id)
-                    putString(USER_NAME, userInfo.name)
-                    putString(USER_SURNAME, userInfo.surname)
-                    putString(USER_PHONE, userInfo.phone)
-                    putString(USER_IMAGE, userInfo.imageLink)
+                    putSerializable(USER_INFO_DATA, userInfo)
                 }
             }
     }
@@ -97,11 +97,13 @@ class UserEditFragment :
 
     private fun sendResult() {
         val result = Bundle().apply {
-            putInt(USER_ID, userId)
-            putString(USER_NAME, name)
-            putString(USER_SURNAME, surname)
-            putString(USER_PHONE, phone)
-            putString(USER_IMAGE, imageLink)
+            putSerializable(USER_INFO_DATA, UserInfo(
+                id = userId,
+                name = name,
+                surname = surname,
+                phone = phone,
+                imageLink = imageLink
+            ))
         }
         setFragmentResult(RESULT_LISTENER_KEY, result)
     }
