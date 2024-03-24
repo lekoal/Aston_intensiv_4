@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">AstonIntensiv4</string>
+    <string name="part_one_button_title">Часть 1</string>
+    <string name="part_two_button_title">Часть 2</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="a_fragment_title">Фрагмент A</string>
+    <string name="button_go_to_b_title">Перейти на B</string>
+    <string name="b_fragment_title">Фрагмент B</string>
+    <string name="button_go_to_c_title">Перейти на C</string>
+    <string name="button_go_back_to_a">Вернуться на A</string>
+    <string name="c_fragment_title">Фрагмент C</string>
+    <string name="button_go_to_d_title">Перейти на D</string>
+    <string name="d_fragment_title">Фрагмент D</string>
+    <string name="button_go_back_to_b_title">Вернуться на B</string>
+    <string name="translatex_text_from_b_to_c">Hello Fragment C</string>
+    <string name="button_go_back">Назад</string>
+    <string name="empty_name_text">Name</string>
+    <string name="empty_surname_text">Surname</string>
+    <string name="empty_phone_text">87763417893</string>
+    <string name="user_list_fragment_title">Список пользователей</string>
+    <string name="user_edit_fragment_title">Редактирование информации о Пользователе</string>
+    <string name="user_edit_change_image_title">Слово для тематики изображения</string>
+    <string name="edit_image_button_ok_title">OK</string>
+    <string name="user_edit_name_title">Имя</string>
+    <string name="user_edit_surname_title">Фамилия</string>
+    <string name="user_edit_phone_title">Номер телефона</string>
+    <string name="user_edit_cancel_button_title">Отмена</string>
+    <string name="user_edit_confirm_button_title">Подтвердить</string>
 </resources>
